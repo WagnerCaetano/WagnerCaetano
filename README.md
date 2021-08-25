@@ -9,4 +9,4 @@ but i'm planning to add more cool stuff and different technologies.
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=wagnercaetano&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
-
+![](https://komarev.com/ghpvc/?username=wagnercaetano&color=blue&style=flat
