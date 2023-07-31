@@ -85,4 +85,4 @@
 [CI&T]: https://ciandt.com/ "Ci&t Home"
 [issues page]: https://github.com/WagnerCaetano/WagnerCaetano/issues "MacroPower/issues"
 [linkedin]: https://www.linkedin.com/in/wagner-caetano/ "Jacob Colvin LinkedIn"
-[portfolio]: [https://wagnercaetano.dev/blog](https://wagnercaetano.dev/projects)https://wagnercaetano.dev/projects "Portfolio"
+[portfolio]: https://wagnercaetano.dev/projects "Portfolio"
