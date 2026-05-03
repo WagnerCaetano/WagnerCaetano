@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-strong">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9"/>
+      <stop offset="50%" style="stop-color:#64ffda;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.3"/>
+    </linearGradient>
+    <linearGradient id="lineGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.7"/>
+      <stop offset="50%" style="stop-color:#82b1ff;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#0a0a0a"/>
+
+  <!-- Grid lines for depth -->
+  <g opacity="0.06" stroke="#ffffff" stroke-width="0.5">
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="400" y1="0" x2="400" y2="400"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="200" y1="0" x2="200" y2="400"/>
+    <line x1="600" y1="0" x2="600" y2="400"/>
+  </g>
+
+  <!-- Large rotating cube wireframe - center -->
+  <g filter="url(#glow)">
+    <!-- Back face -->
+    <polygon points="320,120 480,120 480,280 320,280" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.3">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 200" to="360 400 200" dur="20s" repeatCount="indefinite"/>
+    </polygon>
+
+    <!-- Main cube with 3D rotation effect -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0 400 200" to="360 400 200" dur="20s" repeatCount="indefinite"/>
+      <!-- Front face -->
+      <polygon points="340,140 460,140 460,260 340,260" fill="none" stroke="url(#lineGrad)" stroke-width="1.5" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite"/>
+      </polygon>
+      <!-- Connecting lines for 3D effect -->
+      <line x1="340" y1="140" x2="320" y2="120" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+      <line x1="460" y1="140" x2="480" y2="120" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+      <line x1="460" y1="260" x2="480" y2="280" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+      <line x1="340" y1="260" x2="320" y2="280" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Outer rotating triangle - large -->
+  <g filter="url(#glow-strong)">
+    <polygon points="400,80 520,300 280,300" fill="none" stroke="#64ffda" stroke-width="1.5" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 200" to="-360 400 200" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Inner rotating triangle - inverted -->
+  <g filter="url(#glow)">
+    <polygon points="400,300 310,130 490,130" fill="none" stroke="#82b1ff" stroke-width="1" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 200" to="360 400 200" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.15;0.5" dur="3.5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Pulsing diamond -->
+  <g filter="url(#glow)">
+    <polygon points="400,100 500,200 400,300 300,200" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.4">
+      <animateTransform attributeName="transform" type="rotate" from="45 400 200" to="405 400 200" dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Floating particles -->
+  <circle cx="150" cy="100" r="1.5" fill="#ffffff" opacity="0.6">
+    <animate attributeName="cy" values="100;80;100" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="650" cy="150" r="1" fill="#64ffda" opacity="0.5">
+    <animate attributeName="cy" values="150;130;150" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="100" cy="300" r="1.5" fill="#82b1ff" opacity="0.4">
+    <animate attributeName="cy" values="300;280;300" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="320" r="1" fill="#ffffff" opacity="0.5">
+    <animate attributeName="cy" values="320;300;320" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.15;0.5" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="250" cy="350" r="2" fill="#64ffda" opacity="0.3">
+    <animate attributeName="cy" values="350;330;350" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="550" cy="70" r="1.5" fill="#ffffff" opacity="0.4">
+    <animate attributeName="cy" values="70;50;70" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Connecting dotted lines between shapes -->
+  <line x1="150" y1="100" x2="300" y2="200" stroke="#ffffff" stroke-width="0.3" stroke-dasharray="4,4" opacity="0.15">
+    <animate attributeName="stroke-dashoffset" from="0" to="24" dur="3s" repeatCount="indefinite"/>
+  </line>
+  <line x1="650" y1="150" x2="500" y2="200" stroke="#64ffda" stroke-width="0.3" stroke-dasharray="4,4" opacity="0.15">
+    <animate attributeName="stroke-dashoffset" from="0" to="24" dur="4s" repeatCount="indefinite"/>
+  </line>
+  <line x1="100" y1="300" x2="300" y2="200" stroke="#82b1ff" stroke-width="0.3" stroke-dasharray="4,4" opacity="0.15">
+    <animate attributeName="stroke-dashoffset" from="0" to="24" dur="3.5s" repeatCount="indefinite"/>
+  </line>
+  <line x1="700" y1="320" x2="500" y2="200" stroke="#ffffff" stroke-width="0.3" stroke-dasharray="4,4" opacity="0.15">
+    <animate attributeName="stroke-dashoffset" from="0" to="24" dur="5s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Small hexagon accent - left -->
+  <g filter="url(#glow)" opacity="0.4">
+    <polygon points="120,190 140,178 160,190 160,210 140,222 120,210" fill="none" stroke="#64ffda" stroke-width="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 140 200" to="360 140 200" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.15;0.4" dur="6s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Small hexagon accent - right -->
+  <g filter="url(#glow)" opacity="0.35">
+    <polygon points="620,175 640,163 660,175 660,195 640,207 620,195" fill="none" stroke="#82b1ff" stroke-width="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 640 190" to="-360 640 190" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.35;0.1;0.35" dur="5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Pulsing circles at vertices -->
+  <circle cx="400" cy="80" r="3" fill="none" stroke="#64ffda" stroke-width="0.5" opacity="0.6">
+    <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="520" cy="300" r="3" fill="none" stroke="#64ffda" stroke-width="0.5" opacity="0.6">
+    <animate attributeName="r" values="3;6;3" dur="2s" begin="0.7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2s" begin="0.7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="280" cy="300" r="3" fill="none" stroke="#64ffda" stroke-width="0.5" opacity="0.6">
+    <animate attributeName="r" values="3;6;3" dur="2s" begin="1.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2s" begin="1.4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Scan line effect -->
+  <rect x="0" y="0" width="800" height="2" fill="#ffffff" opacity="0.03">
+    <animate attributeName="y" from="-2" to="400" dur="8s" repeatCount="indefinite"/>
+  </rect>
+</svg>
